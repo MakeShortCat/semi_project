@@ -7,4 +7,8 @@
 #pwd : 현재 폴더 확인 하는 명령어
 #exit() : 빠져나오기
 #streamlit run app.py
+#라이브러리 목록 얻어내기 / 동일한 가상환경 conda env export > base_enviroment.yml
+#conda env export -n prj > prj_enviroment.yml
+#conda env create -f base_enviroment.yml
+#conda activate prj
 
