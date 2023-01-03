@@ -79,10 +79,10 @@ def address_trans(location, PageNo):
             address_df.drop(i, inplace=True)
     
 
-    Map = folium.Map(location=[37.541, 126.986],
+    Map = folium.Map(location=[37.35, 126.986],
                 zoom_start=9, 
-                width=750, 
-                height=500
+                width=650, 
+                height=400
                 )
 
     for i in range(0 ,len(address_df['좌표'])):

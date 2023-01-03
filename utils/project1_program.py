@@ -51,6 +51,8 @@ def Streamlit_Manual(names):
                  'image' : 'url이나 로컬 저장소 위치에 있는 이미지 파일 삽입',
                  'dataframe' : '데이터 프레임 삽입'}
     df3 = pd.DataFrame(inst_Dict, index=['설명'])
+    df3 = df3.T.reset_index(drop=False).rename(columns={'index':'명령어'})
+
     with st.expander(names):
         st.write(Script3)
         st.dataframe(df3)
@@ -70,8 +72,13 @@ def Data_Handle(names):
             con1 = st.container()
             con1.caption(f"{location}에 있는 엘리베이터 입니다.")
             address_return_result = at1.address_trans(location, int(page))
-            st.components.v1.html(address_return_result[0],width = 800 ,height=700)
-            st.dataframe(address_return_result[1])
+            col1, col2 = st.columns([30,27])
+            with col1:
+                col1.subheader("지도로 표시된 위치")
+                st.components.v1.html(address_return_result[0],width = 700 ,height=900)
+            with col2:
+                col2.subheader("엘리베이터 정보")
+                st.dataframe(address_return_result[1] , height=600)
         
         ascii_trans = st.text_input(label="문자를 입력하세요")
         
@@ -89,7 +96,7 @@ def Data_Diagram(names):
     Script5 = '''데이터의 흐름을 표시한 Diagram 입니다. 지역명과 페이지를 입력받으면
     공공데이터 포털의 API에서 자료를 받아온 뒤에 folium에 맞게 가공하여 웹 페이지 내부에 지도와 데이터프레임으로 표시합니다'''
     with st.expander(names):
-        st.image(pic_loc, width=1800)
+        st.image(pic_loc, width=1300)
         st.write(Script5)
             
             
