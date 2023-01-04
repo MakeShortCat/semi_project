@@ -91,5 +91,3 @@ def address_trans(location, PageNo):
                     tooltip=(elv_df['elvtrDiv'].iloc[i], elv_df['elvtrSttsNm'].iloc[i])).add_to(Map)
 
     return [Map._repr_html_(), address_df]
-
-
