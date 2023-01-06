@@ -49,7 +49,7 @@ def Streamlit_Diagram(names):
 def Streamlit_Manual(names):
     Script3 = '''Streamlit 명령어와 그 사용법이다 이 웹 페이지를 만드는데 사용된 구조는 본문 옆에 사이드바의
     셀렉트 박스에서 item_list에 있는 항목들 중 하나를 고른다 이때 item_list는 그대로 표시되지 않고 format_func = FIL에 의하여
-    FIL함수에 의해 바뀌어서 표시되게 된다. 항목중 하나를 고르면 p1.app, p2.app, p3.app중 하나가 실행된다.'''
+    FIL함수에 의해 바뀌어서 표시되게 된다. 항목중 하나를 고르면 p1.app, p2.app, intro.app중 하나가 실행된다.'''
     inst_Dict = {'title' : '제목 입력', 'sidebar' : '본문 옆에 사이드바 생성',
                  'selectbox' : '여러개중에서 하나를 선택할 수 있는 박스 생성',
                  'write' : '글자를 적을 수 있음', 'expander' : '문서를 열고 닫을수 있는 박스 생성',
